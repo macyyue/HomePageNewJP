@@ -33,6 +33,8 @@ import NumberInfo from '@/views/NumberInfo/index.vue'
 import ConfirmationPage from '@/views/ConfirmationPage/index.vue'
 import News from '@/views/News/index.vue'
 import Login from '@/views/Login/index.vue'
+import News20240205 from '@/views/News20240205/index.vue'
+import News20231124 from '@/views/News20231124/index.vue'
 import News20230611 from '@/views/News20230611/index.vue'
 import News20230818 from '@/views/News20230818/index.vue'
 import News20230522 from '@/views/News20230522/index.vue'
@@ -44,7 +46,6 @@ import News20220725 from '@/views/News20220725/index.vue'
 import News20220521 from '@/views/News20220521/index.vue'
 import LoginNewMember from '@/views/LoginNewMember/index.vue'
 import PwForgot from '@/views/PwForgot/index.vue'
-// import { compile } from 'vue'
 
 const router = createRouter({
     history: createWebHistory(
@@ -54,12 +55,12 @@ const router = createRouter({
 
         {
             path: '/',
-            component: Home
+            name: 'Home',
+            component: Home,
         },
-
         {
             path: '/Company',
-            component: Company
+            component: Company,
         },
         {
             path: '/Access',
@@ -197,6 +198,18 @@ const router = createRouter({
             component: News,
         },
         {
+            path: '/News20240205/:title?',
+            name: 'News20240205',
+            component: News20240205,
+            props: true,
+        },
+        {
+            path: '/News20231124/:title?',
+            name: 'News20231124',
+            component: News20231124,
+            props: true,
+        },
+        {
             path: '/News20230818/:title?',
             name: 'News20230818',
             component: News20230818,
@@ -282,10 +295,7 @@ const router = createRouter({
             top: 0
         }
     },
-
-
-
-
 })
+
 
 export default router

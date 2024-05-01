@@ -43,6 +43,9 @@
   </article>
   </template>
   <style>
+  .mainContents{
+    min-width: 1390px;
+  }
   .inquiryWrap{
     width :760px;
       margin: 0 auto;

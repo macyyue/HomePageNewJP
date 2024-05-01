@@ -1,16 +1,15 @@
 ﻿<script>
 export default {
-
   data() {
     return {
-      yourImageArray: [],
       show: false,
       imageSrc: '',
       currentIndex: 0,
+      imageList: [],
     };
   },
   methods: {
-    openLightbox(src,index,) {
+    openLightbox(src, index) {
       this.imageSrc = src;
       this.currentIndex = index;
       this.show = true;
@@ -18,34 +17,27 @@ export default {
     closeLightbox() {
       this.show = false;
     },
+    prevImage() {
+      this.currentIndex = (this.currentIndex - 1 + this.imageList.length) % this.imageList.length;
+      this.imageSrc = this.imageList[this.currentIndex];
+    },
     nextImage() {
-    if (this.currentIndex < this.yourImageArray.length - 1) {
-      this.currentIndex++;
-      this.imageSrc = this.yourImageArray[this.currentIndex];
-    }
-  },
-  prevImage() {
-    if (this.currentIndex > 0) {
-      this.currentIndex--;
-      this.imageSrc = this.yourImageArray[this.currentIndex];
-    }
-  },
+      this.currentIndex = (this.currentIndex + 1) % this.imageList.length;
+      this.imageSrc = this.imageList[this.currentIndex];
+    },
   },
 };
 </script>
 <template>
   <div v-if="show" class="lightbox">
     <div class="lightbox-content">
-
-      <!-- <button @click="prevImage" class="prev-button">Previous</button> -->
       <button @click="closeLightbox" class="close-button">CLOSE✖</button>
-      <!-- <button @click="nextImage" class="next-button">Next</button> -->
+      <button @click="prevImage" class="prev-button">Prev</button>
       <img :src="imageSrc" alt="图片">
+      <button @click="nextImage" class="next-button">Next</button>
     </div>
   </div>
 </template>
-
-
 <style scoped>
 .lightbox {
   position: fixed;
@@ -76,6 +68,7 @@ export default {
   color: blue;
   margin: -27px -17px;
 }
+
 .prev-button,
 .next-button {
   position: absolute;

@@ -1,16 +1,16 @@
 ﻿<script setup>
-import MessageNav from '@/views/Message/components/MessageNav.vue'
-import MessageFooter from '@/views/Message/components/MessageFooter.vue'
+import RecruitNav from '@/components/RecruitNav/index.vue'
+import RecruitFooter from '@/components/RecruitFooter/index.vue'
 import MessageHome from '@/views/Message/components/MessageHome.vue'
 
 </script>
 <template>
 
 <div>
-  <MessageNav />
+  <RecruitNav />
   <RouterView />
   <MessageHome />
-  <MessageFooter />
+  <RecruitFooter />
   <BackToTop />
 </div>
 </template>

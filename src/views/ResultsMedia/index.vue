@@ -1,14 +1,14 @@
 ﻿<script setup>
-    import ResultsMediaNav from '@/views/ResultsMedia/components/ResultsMediaNav.vue'
-    import ResultsMediaFooter from '@/views/ResultsMedia/components/ResultsMediaFooter.vue'
+    import HomeNav from '@/components/HomeNav/index.vue'
+    import HomeFooter from '@/components/HomeFooter/index.vue'
     import ResultsMediaHome from '@/views/ResultsMedia/components/ResultsMediaHome.vue'
 </script>
 <template>
 <div>
-  <ResultsMediaNav />
+  <HomeNav />
   <RouterView />
   <ResultsMediaHome />
-  <ResultsMediaFooter />
+  <HomeFooter />
   <BackToTop />
 </div>
 </template>

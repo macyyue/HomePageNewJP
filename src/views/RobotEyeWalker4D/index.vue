@@ -1,15 +1,15 @@
 ﻿<script setup>
 import RobotEyeWalker4DHome from './components/RobotEyeWalker4DHome.vue'
-import RobotEyeWalker4DNav from './components/RobotEyeWalker4DNav.vue'
-import RobotEyeWalker4DFooter from './components/RobotEyeWalker4DFooter.vue'
+import HomeNav from '@/components/HomeNav/index.vue'
+import HomeFooter from '@/components/HomeFooter/index.vue'
 </script>
 
 <template>
     <div>
-        <RobotEyeWalker4DNav />
+        <HomeNav />
         <RobotEyeWalker4DHome />
         <RouterView />
-        <RobotEyeWalker4DFooter />
+        <HomeFooter />
         <BackToTop />
     </div>
 </template>

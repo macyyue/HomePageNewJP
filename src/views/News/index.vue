@@ -1,15 +1,15 @@
 ﻿<script setup>
 import NewsHome from './components/NewsHome.vue'
-import NewsNav from './components/NewsNav.vue'
-import NewsFooter from './components/NewsFooter.vue'
+import HomeNav from '@/components/HomeNav/index.vue'
+import HomeFooter from '@/components/HomeFooter/index.vue'
 </script>
 
 <template>
     <div>
-        <NewsNav />
+        <HomeNav />
         <NewsHome />
         <RouterView />
-        <NewsFooter />
+        <HomeFooter />
         <BackToTop />
     </div>
 </template>

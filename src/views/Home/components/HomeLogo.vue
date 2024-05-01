@@ -17,9 +17,6 @@ export default {
             this.$emit('logo-animation-end',!this._showLogo)
           })
         }
-        
-    
-      
     }
 
 </script>
@@ -105,20 +102,6 @@ export default {
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
 }
-
-
-/* #logo_string {
-    height: 50PX;
-    box-sizing: border-box;
-    vertical-align: middle;
-} */
-
-
-/* .wavy {
-    width: auto;
-    display: flex;
-    position: absolute;
-} */
 
 .wavy span {
     position: absolute;

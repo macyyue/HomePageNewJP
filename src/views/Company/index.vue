@@ -1,17 +1,17 @@
 ﻿<script setup>
 
 import CompanyHome from './components/CompanyHome.vue'
-import CompanyNav from './components/CompanyNav.vue'
-import CompanyFooter from './components/CompanyFooter.vue'
+import HomeNav from '@/components/HomeNav/index.vue'
+import HomeFooter from '@/components/HomeFooter/index.vue'
 
 </script>
 
 <template>
 <div>
-  <CompanyNav />
+  <HomeNav />
   <CompanyHome />
   <RouterView />
-  <CompanyFooter />
+  <HomeFooter />
   <BackToTop />
 
 </div>

@@ -33,6 +33,7 @@ const handleScroll = () => {
 };
 </script>
 <template>
+  <div class="mainContent">
     <div class="UsfactoryMainArea delayed-image"><img src="@/assets/company01.jpg" alt="" style="width: 100%; height:100% ;">
         <div class="UsfactoryCenteredText">
         <p>ユーズファクトリーについて</p>
@@ -105,10 +106,14 @@ const handleScroll = () => {
     <img src="@/assets/img16.jpg" alt="" class="ftEntryImg">
     <p class="tit yugothic">現場の働きやすさを創造する</p>
     <router-link to="/LoginForm"><p class="Btn"><span>INTERNSHIP ENTRY</span></p></router-link>
-</div>	
+</div>
+</div>
 </template>
 
 <style>
+.mianContent{
+    min-width: 1390px;
+}
 .UsfactoryMainArea {
     width: 100%; 
     height: 650px;

@@ -1,15 +1,15 @@
 ﻿<script setup>
 import MediaHome from './components/MediaHome.vue'
-import MediaNav from './components/MediaNav.vue'
-import MediaFooter from './components/MediaFooter.vue'
+import HomeNav from '@/components/HomeNav/index.vue'
+import HomeFooter from '@/components/HomeFooter/index.vue'
 </script>
 
 <template>
     <div>
-        <MediaNav />
+        <HomeNav />
         <MediaHome />
         <RouterView />
-        <MediaFooter />
+        <HomeFooter />
         <BackToTop />
     </div>
 </template>

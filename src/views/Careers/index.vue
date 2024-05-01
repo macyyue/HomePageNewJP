@@ -1,14 +1,14 @@
 ﻿<script setup>
-import CareersNav from '@/views/Careers/components/CareersNav.vue'
-import CareersFooter from '@/views/Careers/components/CareersFooter.vue'
+import RecruitNav from '@/components/RecruitNav/index.vue'
+import RecruitFooter from '@/components/RecruitFooter/index.vue'
 import CareersHome from '@/views/Careers/components/CareersHome.vue'
 </script>
 <template>
 <div>
-  <CareersNav />
+  <RecruitNav />
   <RouterView />
   <CareersHome />
-  <CareersFooter />
+  <RecruitFooter />
   <BackToTop />
 </div>
 </template>

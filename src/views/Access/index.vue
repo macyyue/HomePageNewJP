@@ -1,10 +1,7 @@
 ﻿<script setup>
 import AccessHome from './components/AccessHome.vue'
-import AccessNav from './components/AccessNav.vue'
-import AccessFooter from './components/AccessFooter.vue'
-
-
-
+import HomeNav from '@/components/HomeNav/index.vue'
+import HomeFooter from '@/components/HomeFooter/index.vue'
 
 </script>
 
@@ -12,10 +9,10 @@ import AccessFooter from './components/AccessFooter.vue'
 
 
 <div>
-  <AccessNav />
+  <HomeNav />
   <AccessHome />
   <RouterView />
-  <AccessFooter />
+  <HomeFooter />
   <BackToTop />
 
 </div>

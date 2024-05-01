@@ -2,10 +2,10 @@
 </script>
 
 <template>
+<div class="mainContent">
     <div class="homeMainArea delayed-image"><img src="@/assets/MainArea-image01.jpg" alt="" style="width: 100%; height:100% ;">
         <p class="fadeInText">建設業界の慣習を覆す</p> 
     </div>
-
     <div class="homeWrapper">
         <div class="homeContents">
             <router-link to="/Message" >
@@ -35,8 +35,14 @@
             </router-link>
         </div>
     </div>
+</div>
+
+
 </template>
 <style>
+.mainContent{
+   min-width: 1390px;
+}
 @keyframes fadeIn {
     from {
         opacity: 0;

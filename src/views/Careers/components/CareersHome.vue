@@ -1,6 +1,7 @@
 ﻿<script>
 </script>
 <template>
+    <div class="mainContent">
     <div class="careersMainArea delayed-image"><img src="@/assets/img10.jpg" alt="" style="width: 100%; height:100% ;">
         <div class="line js-anim-elm is_active">
 			<div class="item item01"></div>
@@ -124,12 +125,15 @@ GW<br/>
     <p class="tit yugothic">現場の働きやすさを創造する</p>
 <router-link to="/LoginForm"><p class="Btn"><span>INTERNSHIP ENTRY</span></p></router-link>
 </div>	
-
+</div>
 
 
 </template>
 
 <style>
+.mianContent{
+    min-width: 1390px;
+}
 *{
     padding: 0;
     margin: 0;

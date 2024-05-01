@@ -2,6 +2,7 @@
 
 </script>
 <template>
+    <div class="MainContent">
     <div class="meassageMainArea delayed-image"><img src="@/assets/company01.jpg" alt="" style="width: 100%; height:100% ;">
         <div class="centeredText">
         <p>MESSAGE</p>
@@ -50,9 +51,13 @@ U&#8217;sFactoryは、建設業界の当たり前を変えて、より良い働�
     <p class="tit yugothic">現場の働きやすさを創造する</p>
     <router-link to="/LoginForm"><p class="Btn"><span>INTERNSHIP ENTRY</span></p></router-link>
 </div>	
+</div>
 </template>
 
 <style>
+.MainContent{
+    min-width: 1390px;
+}
 .meassageMainArea {
     width: 100%; 
     height: 650px;

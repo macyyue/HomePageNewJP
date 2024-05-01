@@ -1,15 +1,15 @@
 ﻿<script setup>
 import ModelingServiceHome from './components/ModelingServiceHome.vue'
-import ModelingServiceNav from './components/ModelingServiceNav.vue'
-import ModelingServiceFooter from './components/ModelingServiceFooter.vue'
+import HomeNav from '@/components/HomeNav/index.vue'
+import HomeFooter from '@/components/HomeFooter/index.vue'
 </script>
 
 <template>
     <div>
-        <ModelingServiceNav />
+        <HomeNav />
         <ModelingServiceHome />
         <RouterView />
-        <ModelingServiceFooter />
+        <HomeFooter />
         <BackToTop />
     </div>
 </template>

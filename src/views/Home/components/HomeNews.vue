@@ -2,32 +2,47 @@
 
 </script>
 <template>
-    
- <div class="news_list_con">
+
+
+  <div class="Main__body">
+    <div class="Main__content">
+      <div class="news_list_con">
         <h2 > <span>NEWS</span> </h2>
-        <!-- <ul>
-            <li>
-                <a href="">【U’sFactory祝10周年】革新的Web情報共有システム「Info360Ⓡ」に新機能追加【 8/30～9/1 大阪DX展に出展】</a>
-                <span id="News01">2023.08.18</span>
-            </li>
-            <li><a href="">「BI For Archicad」が国交省の建築BIM加速化事業で補助対象となるソフトウェアに認定されました</a>
-                <span>2023.02.14</span>
-            </li>
-            <li><a href=""> 内装業者のための積算・発注業務革命とは</a>
-                <span>2022.12.28</span>
-            </li>
-            <li><a href=""> 躍進企業応援マガジン COMPANYTANK(カンパニータンク) 2022年9月号にインタビューが掲載されました</a>
-                <span>2022.09.16</span>
-            </li>
-            <li><a href=""> 3次元計測モデリングサービス『Info360®』が好調</a>
-                <span>2022.08.23</span>
-            </li>
-            <li><a href=""> BI Structureが各社に必要とされる理由とは</a>
-                <span >2022.07.25</span>
-            </li>
-            
-        </ul> -->
         <div class="news" data-news-pc="row">
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">2024年02月05日</time>
+                  <div class="news__category"><i class="util-badge--news">技術</i></div>
+                </div>
+                <div class="news__caption">
+                  <h3 class="news__title">
+                    <router-link to="/News20240205/わずか5分で完了！！仮設足場計画～発注数量算出を自動化" class="override-link-style">
+                      わずか5分で完了！！仮設足場計画～発注数量算出を自動化
+                  </router-link>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">2023年11月24日</time>
+                  <div class="news__category"><i class="util-badge--news">お知らせ</i></div>
+                </div>
+                <div class="news__caption">
+                  <h3 class="news__title">
+                    <router-link to="/News20231124/AI Structureがリリースされました" class="override-link-style">
+                      AI Structureがリリースされました
+                  </router-link>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </article>
           <article class="news__article">
             <div class="news__type">
               <div class="news__body">
@@ -181,19 +196,34 @@
     
 
 
+
+      </div>
+      </div>
+
 </template>
-<style>
+<style scoped>
+body *, body :after, body :before {
+  box-sizing: border-box;
+
+}
+.Main__body{
+    min-width: 1390px;
+}
+.Main__content {
+    padding: 4em 30px 100px;
+    margin: 0 auto;
+}
 * {
     margin: 0;
     padding: 0;
 }
 
-@media screen and (min-width: 641px) and (max-width: 1000px){
+/* @media screen and (min-width: 641px) and (max-width: 1000px){
 .news_list_con {
     width: 100%;
     padding: 13.3333% 8.6667%;
 }
-}
+} */
 .news_list_con {
     max-width: 1264px;
     padding: 4em 32px 100px;
@@ -349,6 +379,3 @@
     background-color: rgba(90, 86, 86, 0.1);
 }
 </style>
-
-
-

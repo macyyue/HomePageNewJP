@@ -131,16 +131,11 @@ export default {
 }
 
 .goods {
+    min-width: 1390px;
     position: relative;
-    width: 100%;
     height: 380px;
     background-color: #454545;
     overflow: hidden;
-}
-@media (max-width: 700px){
-  .goods-wrapper {
-    padding: 4px 0 40px;
-}
 }
 .goods-wrapper {
     display: flex;

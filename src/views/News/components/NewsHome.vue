@@ -14,23 +14,24 @@ export default {
 </script>
 
 <template>
-  <div class="Main__inner">
-    <div class="Main__guide">
-      <ol class="main-breadcrumb" >
-        <li >
+    <div class="Main__inner">
+      <div class="Main__guide">
+        <ol class="main-breadcrumb">
+          <li>
             <router-link to="/" style="text-decoration: none;color: #333;">
-          <span class="main-breadcrumb__type--nolink">ホーム</span>
-           </router-link>
-        </li>
-        <li class="last-item">
-          <span class="main-breadcrumb__type--nolink">更新一覧</span>
-        </li>
-      </ol>
-      <!--/Main__guide-->
+              <span class="main-breadcrumb__type--nolink">ホーム</span>
+            </router-link>
+          </li>
+          <li class="last-item">
+            <span class="main-breadcrumb__type--nolink">更新一覧</span>
+          </li>
+        </ol>
+        <!--/Main__guide-->
+      </div>
     </div>
-</div> 
-<router-view></router-view>
-  <div class="Main__head">
+    <router-view></router-view>
+    <div class="Main__body">
+      <div class="Main__head">
       <div class="heading1">
         <div class="heading1__inner">
           <h1 class="heading1__title">更新一覧</h1>
@@ -38,13 +39,13 @@ export default {
       </div>
       <!--/Main__head-->
     </div>
-    <div class="Main__body">
       <div class="Main__content">
         <div class="pulldown-navi">
-          <div class="pulldown-navi__inner">
+          <!-- <div class="pulldown-navi__inner">
             <select class="pulldown-navi__select js-pulldown-navi">
               <optgroup label="">
                 <option value>年度を選択してください</option>
+                <option value="/news/2024/">2024年度</option>
                 <option value="/news/2023/">2023年度</option>
                 <option value="/news/2022/">2022年度</option>
                 <option value="/news/2021/">2021年度</option>
@@ -54,10 +55,43 @@ export default {
                 <option value="/news/2017/">2017年度</option>
               </optgroup>
             </select>
-          </div>
+          </div> -->
         </div>
-        
         <div class="news" data-news-pc="row">
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">2024年02月05日</time>
+                  <div class="news__category"><i class="util-badge--news">技術</i></div>
+                </div>
+                <div class="news__caption">
+                  <h3 class="news__title">
+                    <router-link to="/News20240205/わずか5分で完了！！仮設足場計画～発注数量算出を自動化" class="override-link-style">
+                      わずか5分で完了！！仮設足場計画～発注数量算出を自動化
+                    </router-link>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">2023年11月24日</time>
+                  <div class="news__category"><i class="util-badge--news">お知らせ</i></div>
+                </div>
+                <div class="news__caption">
+                  <h3 class="news__title">
+                    <router-link to="/News20231124/AI Structureがリリースされました" class="override-link-style">
+                      AI Structureがリリースされました
+                    </router-link>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </article>
           <article class="news__article">
             <div class="news__type">
               <div class="news__body">
@@ -65,10 +99,11 @@ export default {
                   <time class="news__date">2023年8月18日</time>
                   <div class="news__category"><i class="util-badge--events">イベント</i></div>
                 </div>
-               
+
                 <div class="news__caption">
-                  <h3 class="news__title" > 
-                    <router-link to="/News20230818/【U’sFactory祝10周年】革新的Web情報共有システム「Info360Ⓡ」に新機能追加【8月30日~9月1日大阪DX展に出展】" class="override-link-style">
+                  <h3 class="news__title">
+                    <router-link to="/News20230818/【U’sFactory祝10周年】革新的Web情報共有システム「Info360Ⓡ」に新機能追加【8月30日~9月1日大阪DX展に出展】"
+                      class="override-link-style">
                       【U’sFactory祝10周年】革新的Web情報共有システム「Info360Ⓡ」に新機能追加【8/30~9/1大阪DX展に出展】
                     </router-link>
                   </h3>
@@ -87,8 +122,8 @@ export default {
 
                   <h3 class="news__title">
                     <router-link to="/News20230611/必見！！「超初めてのArchicad操作法」を無料公開" class="override-link-style">
-                    必見！！「超初めてのArchicad操作法」を無料公開
-                  </router-link>
+                      必見！！「超初めてのArchicad操作法」を無料公開
+                    </router-link>
                   </h3>
                 </div>
               </div>
@@ -102,9 +137,10 @@ export default {
                   <div class="news__category"><i class="util-badge--cat1612">イベント</i></div>
                 </div>
                 <div class="news__caption">
-                <router-link to="/News20230522/Info360（web PointCloud Viewer）がリリースされました（千葉幕張メッセ CSPI-EXPOに展示します）" class="override-link-style">
-                  <h3 class="news__title">Info360（web PointCloud Viewer）がリリースされました（千葉幕張メッセ CSPI-EXPOに展示します）</h3>
-                </router-link>
+                  <router-link to="/News20230522/Info360（web PointCloud Viewer）がリリースされました（千葉幕張メッセ CSPI-EXPOに展示します）"
+                    class="override-link-style">
+                    <h3 class="news__title">Info360（web PointCloud Viewer）がリリースされました（千葉幕張メッセ CSPI-EXPOに展示します）</h3>
+                  </router-link>
 
                 </div>
               </div>
@@ -118,9 +154,10 @@ export default {
                   <div class="news__category"><i class="util-badge--news">お知らせ</i></div>
                 </div>
                 <div class="news__caption">
-                  <router-link to="/News20230512/2023年5月16日 BI For AC V26をリリース「BIM積算機能が大幅にバージョンアップ」" class="override-link-style">
-                  <h3 class="news__title">2023年5月16日 BI For AC V26をリリース「BIM積算機能が大幅にバージョンアップ」</h3>
-                </router-link>
+                  <router-link to="/News20230512/2023年5月16日 BI For AC V26をリリース「BIM積算機能が大幅にバージョンアップ」"
+                    class="override-link-style">
+                    <h3 class="news__title">2023年5月16日 BI For AC V26をリリース「BIM積算機能が大幅にバージョンアップ」</h3>
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -133,9 +170,10 @@ export default {
                   <div class="news__category"><i class="util-badge--cat1612">お知らせ</i></div>
                 </div>
                 <div class="news__caption">
-                  <router-link to="/News20230214/「BI For Archicad」が国交省の建築BIM加速化事業で補助対象となるソフトウェアに認定されました" class="override-link-style">
-                  <h3 class="news__title">「BI For Archicad」が国交省の建築BIM加速化事業で補助対象となるソフトウェアに認定されました</h3>
-                </router-link>
+                  <router-link to="/News20230214/「BI For Archicad」が国交省の建築BIM加速化事業で補助対象となるソフトウェアに認定されました"
+                    class="override-link-style">
+                    <h3 class="news__title">「BI For Archicad」が国交省の建築BIM加速化事業で補助対象となるソフトウェアに認定されました</h3>
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -149,8 +187,8 @@ export default {
                 </div>
                 <div class="news__caption">
                   <router-link to="/News20221228/内装業者のための積算・発注業務革命とは" class="override-link-style">
-                  <h3 class="news__title">内装業者のための積算・発注業務革命とは</h3>
-                </router-link>
+                    <h3 class="news__title">内装業者のための積算・発注業務革命とは</h3>
+                  </router-link>
 
                 </div>
               </div>
@@ -165,9 +203,9 @@ export default {
                 </div>
                 <div class="news__caption">
                   <h3 class="news__title">
-                  <router-link to="/News20220823/【3次元計測モデリングサービス『Ｉｎｆｏ３６０®』が好調】" class="override-link-style">
-                    【3次元計測モデリングサービス『Ｉｎｆｏ３６０®』が好調】
-                  </router-link>
+                    <router-link to="/News20220823/【3次元計測モデリングサービス『Ｉｎｆｏ３６０®』が好調】" class="override-link-style">
+                      【3次元計測モデリングサービス『Ｉｎｆｏ３６０®』が好調】
+                    </router-link>
                   </h3>
                 </div>
               </div>
@@ -182,9 +220,9 @@ export default {
                 </div>
                 <div class="news__caption">
                   <h3 class="news__title">
-                  <router-link to="/News20220725/BI Structureが各社に必要とされる理由とは" class="override-link-style">
-                    BI Structureが各社に必要とされる理由とは
-                  </router-link>
+                    <router-link to="/News20220725/BI Structureが各社に必要とされる理由とは" class="override-link-style">
+                      BI Structureが各社に必要とされる理由とは
+                    </router-link>
                   </h3>
                 </div>
               </div>
@@ -199,9 +237,10 @@ export default {
                 </div>
                 <div class="news__caption">
                   <h3 class="news__title">
-                    <router-link to="/News20220521/産経新聞に「BIMデータの自動変換による見える化で合意形成を早期に実現へ」の記事が掲載されました" class="override-link-style">
-                    産経新聞に「BIMデータの自動変換による見える化で合意形成を早期に実現へ」の記事が掲載されました
-                  </router-link>
+                    <router-link to="/News20220521/産経新聞に「BIMデータの自動変換による見える化で合意形成を早期に実現へ」の記事が掲載されました"
+                      class="override-link-style">
+                      産経新聞に「BIMデータの自動変換による見える化で合意形成を早期に実現へ」の記事が掲載されました
+                    </router-link>
                   </h3>
                 </div>
               </div>
@@ -210,17 +249,18 @@ export default {
         </div>
       </div>
     </div>
-    
 </template>
-  <style scoped>
+<style scoped>
   body *, body :after, body :before {
     box-sizing: border-box;
 }
-#main {
-    -webkit-font-feature-settings: "palt";
-    min-width: 1280px;
-    padding-top: 87px;
-    font-feature-settings: "palt";
+.Main__body{
+    min-width: 1390px;
+}
+.Main__content {
+    max-width: 1264px;
+    padding: 4em 30px 100px;
+    margin: 0 auto;
 }
 .Main__guide .main-breadcrumb {
     display: flex;
@@ -259,18 +299,12 @@ export default {
     font-weight: 700;
     text-decoration: none;
 }
-
-.heading1, .heading1--center {
-    width: 1264px;
-    margin-left: 0;
-}
 .heading1 {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 100vw;
+    width: auto;
     margin-bottom: 0;
-    margin-left: calc(50% - 50vw);
     padding: 1.5em 0;
     background-color: #454545;
     color: #fff;
@@ -282,11 +316,7 @@ export default {
     padding: 0 32px;
 }
 .Main__content {
-    max-width: 1264px;
     padding: 4em 32px 100px;
-}
-.Main__content {
-    margin: 0 auto;
 }
 .Main__content>:first-child, .Main__content>[class^=list-wrap]>:first-child, .Main__content>section:first-child>:first-child {
     margin-top: 0!important;
@@ -443,7 +473,4 @@ div.Main__body .pulldown-navi__inner .pulldown-navi__select {
     margin: 0;
     font-weight: 400;
 }
-
-
-
-  </style>
+</style>

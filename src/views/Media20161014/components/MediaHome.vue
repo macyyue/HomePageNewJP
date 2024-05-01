@@ -30,8 +30,7 @@ export default {
         <h1 class="heading1-v2__title">事業紹介ビデオを作成しました</h1>
        </div>
       </div>
-      <p class="text--right">2023年6月11日</p>
-       
+      <p class="text--right">2016年10月14日</p>
       <div class="column generator-column-v3" data-col-pc="2" data-col-sp="1">
         <div class="column__item item__text">
         <p class="text" style="padding-top: 30px;">U’sFactoryの事業紹介です<br><br>事業内容</p>
@@ -133,7 +132,7 @@ body *, body :after, body :before {
   text-decoration: none;
 }
 .Main__body{
-    min-width: 1200px;
+    min-width: 1390px;
 }
 .Main__content {
     max-width: 1264px;

@@ -225,16 +225,6 @@ export default {
           <h2 class="heading2__title">展示関連情報</h2>
          </div>
         </div>
-        <!-- <h3 class="AboutText">
-          <a href="https://www.youtube.com/watch?v=YQeaFC0zXXs&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link-Youtube--blank">
-          <span class="util-bold"> info360 PointCloud viewer</span>
-        </a>
-      </h3>
-      <h3 class="AboutText">
-          <a href="https://us-factory.jp/wp-content/uploads/2023/05/Info360%E3%83%8F%E3%82%9A%E3%83%B3%E3%83%95202308-22.pdf" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold"> Info360パンフレットはこちら</span>
-        </a>
-      </h3> -->
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
             <router-link to="/News">
@@ -291,7 +281,7 @@ body *, body :after, body :before {
   text-decoration: none;
 }
 .Main__body{
-    min-width: 1200px;
+    min-width: 1390px;
 }
 .Main__content {
     max-width: 1264px;

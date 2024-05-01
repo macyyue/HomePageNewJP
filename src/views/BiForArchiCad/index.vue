@@ -1,15 +1,16 @@
 ﻿<script setup>
 import BiForArchiCadHome from './components/BiForArchiCadHome.vue'
-import BiForArchiCadNav from './components/BiForArchiCadNav.vue'
-import BiForArchiCadFooter from './components/BiForArchiCadFooter.vue'
+import HomeNav from '@/components/HomeNav/index.vue'
+import HomeFooter from '@/components/HomeFooter/index.vue'
+
 </script>
 
 <template>
     <div>
-        <BiForArchiCadNav />
+        <HomeNav />
         <BiForArchiCadHome />
         <RouterView />
-        <BiForArchiCadFooter />
+        <HomeFooter />
         <BackToTop />
     </div>
 </template>

@@ -1,15 +1,15 @@
 ﻿<script setup>
 import Info360ServiceHome from './components/Info360ServiceHome.vue'
-import Info360ServiceNav from './components/Info360ServiceNav.vue'
-import Info360ServiceFooter from './components/Info360ServiceFooter.vue'
+import HomeNav from '@/components/HomeNav/index.vue'
+import HomeFooter from '@/components/HomeFooter/index.vue'
 </script>
 
 <template>
     <div>
-        <Info360ServiceNav />
+        <HomeNav />
         <Info360ServiceHome />
         <RouterView />
-        <Info360ServiceFooter />
+        <HomeFooter />
         <BackToTop />
     </div>
 </template>

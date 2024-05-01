@@ -42,6 +42,7 @@
   <style>
   
    #mainWrap{
+    min-width: 1390px;
      width :760px;
       margin: 0 auto;
       display: flex;

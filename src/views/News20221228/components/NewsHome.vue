@@ -161,7 +161,7 @@ body *, body :after, body :before {
   text-decoration: none;
 }
 .Main__body{
-    min-width: 1200px;
+    min-width: 1390px;
 }
 .Main__content {
     max-width: 1264px;

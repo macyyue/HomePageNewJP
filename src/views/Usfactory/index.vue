@@ -1,16 +1,16 @@
 ﻿<script setup>
-import UsfactoryNav from '@/views/Usfactory/components/UsfactoryNav.vue'
-import UsfactoryFooter from '@/views/Usfactory/components/UsfactoryFooter.vue'
+import RecruitNav from '@/components/RecruitNav/index.vue'
+import RecruitFooter from '@/components/RecruitFooter/index.vue'
 import UsfactoryHome from '@/views/Usfactory/components/UsfactoryHome.vue'
 
 </script>
 <template>
 
 <div>
-  <UsfactoryNav />
+  <RecruitNav />
   <RouterView />
   <UsfactoryHome />
-  <UsfactoryFooter />
+  <RecruitFooter />
   <BackToTop />
 </div>
 </template>

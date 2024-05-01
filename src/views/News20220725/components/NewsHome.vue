@@ -13,7 +13,6 @@ export default {
 };
 </script>
 <template>
-  
   <!-- メイン__ガイド 主要__指南-->
         <div class="Main__guide">
           <ol class="main-breadcrumb" >
@@ -47,11 +46,15 @@ export default {
           <h2 class="heading2__title">BI Structureのご紹介</h2>
          </div>
         </div>
-      <p class="text">
-        2021年7月にリリースされた「BI Structure」がすべてのプロジェクトに必須となっている <br>
-        そもそもBI Structureとは何か？というと、<br>
-        構造計算データからも連携が可能かつ、ARCHICADに直接変換し、BI For ARCHICADで鉄筋や鉄骨詳細を作成するためには欠かせない、「構造３Dモデル(RC・S・SRC)を作成する専用ツール」である。
+      <div class="column generator-column-v3" data-col-pc="2" data-col-sp="1">
+
+        <div class="column__item item__text">
+        <p class="text" style="padding-top: 30px;">
+        2021年7月にリリースされた「BI Structure」がすべてのプロジェクトに必須となっている。
+        そもそもBI Structureとは何か？というと、<br><br>
+        構造計算データからも連携が可能かつ、ARCHICADに直接変換し、BI For ARCHICADで鉄筋や鉄骨詳細を作成するためには欠かせない、「構造3Dモデル(RC・S・SRC)を作成する専用ツール」である。
         </p>
+        </div>
         <div class="column__item item__image01">
         <div class="image-wrap--center">
         <figure class="image">
@@ -67,6 +70,8 @@ export default {
         </figure>
         </div>
         </div>
+      </div>
+
        <!--プロジェクトのご紹介 -->
         <div class="heading2">
           <div class="heading2__inner">
@@ -527,7 +532,7 @@ body *, body :after, body :before {
   text-decoration: none;
 }
 .Main__body{
-    min-width: 1200px;
+    min-width: 1390px;
 }
 .Main__content {
     max-width: 1264px;
@@ -551,8 +556,7 @@ body *, body :after, body :before {
 .text, .text--center, .text--right {
     font-size: 1rem;
 }
-.text, .text--center {
-  
+.text, .text--center { 
     margin: 1em 0 0;
 }
 

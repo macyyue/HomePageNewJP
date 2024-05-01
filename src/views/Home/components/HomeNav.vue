@@ -1,136 +1,139 @@
 <script>
-export default {    
-    data(){
-        return{
-      
+export default {
+    data() {
+        return {
+
             languages: ['日本語', 'English', '简体中文'],
             selectedLanguage: '',
             isDropdownOpen: false,
-           }
-        },
-        mounted() {
-            window.addEventListener('scroll', this.handleScroll);
-        },
-        beforeUnmount() { 
-            window.removeEventListener('scroll', this.handleScroll);
-        },
-        methods:{
-            toggleDropdown() {
+        }
+    },
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    beforeUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
+    methods: {
+        toggleDropdown() {
             this.isDropdownOpen = !this.isDropdownOpen;
 
-           },
-            closeDropdown() {
-           this.isDropdownOpen = false;
-          },
-          selectLanguage(language) {
-          this.selectedLanguage = language;
-          this.isDropdownOpen = false;
-          },
-     }
+        },
+        closeDropdown() {
+            this.isDropdownOpen = false;
+        },
+        selectLanguage(language) {
+            this.selectedLanguage = language;
+            this.isDropdownOpen = false;
+        },
     }
+}
 </script>
 
 <template>
 
- <div class="navi"> 
-    <div class="logo"> 
+    <div class="navi">
+        <div class="logo">
             <h1>
                 <img src="@/assets/UsLogo.svg" style="height: 35px; width: 35px;" alt="">
-            <a href=""> U's Factory</a>
-        </h1>
-       </div>
-
-<div class="ask-language">
-        <div class="overlay1">
-            <router-link to="/Question">お問い合わせ</router-link>
+                <a href=""> U's Factory</a>
+            </h1>
         </div>
+        <div class="ask-language">
+            <ul class="overlay-list">
+                <li class="overlay">
+                    <router-link to="/Question">お問い合わせ</router-link>
+                </li>
 
-        <div class="overlay2">
-         
-            <a href="#" id="language" @click="toggleDropdown">LANGUAGE</a>
-            <a href="#" @click="toggleDropdown">
-            <span id="earth-icon"></span>     
-      </a>
-      <div v-show="isDropdownOpen" @click="closeDropdown" class="dropdown-menu">
-        <ul class="language-list">
-          <li v-for="(language, index) in languages" :key="index" @click="selectLanguage(language)">
-            {{ language }}
-          </li>
-        </ul>
-         </div>
-        </div>
-        <div class="overlay3"> 
-            <router-link to="/Login">ログイン</router-link>
-        </div >
-      
-    <div class="header-wrapper">
-    
-    <ul class="navList">
-        <li class="menuItem"><router-link to="/Company">会社概要</router-link></li>
-    </ul>
-    <ul class="navList">
-        <li class="menuItem"><router-link to="/Access">アクセス</router-link></li>
-    </ul>
-    <ul class="navList">
-        <li class="menuItem"><a href="#">商品紹介</a>
-            <ul class="dropList">
-                <router-link to="/Info360" class="override-link-style">INFO360</router-link>
-                <router-link to="/BiForArchiCad" class="override-link-style">BI for ArchiCAD</router-link>
+                <li class="overlay">
+                    <a href="#" id="language" @click="toggleDropdown">LANGUAGE</a>
+                    <a href="#" @click="toggleDropdown">
+                        <span id="earth-icon"></span>
+                    </a>
+                    <div v-show="isDropdownOpen" @click="closeDropdown" class="dropdown-menu">
+                        <ul class="language-list">
+                            <li v-for="(language, index) in languages" :key="index" @click="selectLanguage(language)">
+                                {{ language }}
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="overlay">
+                    <router-link to="/Login">ログイン</router-link>
+                </li>
             </ul>
-        </li>
-    </ul>
-    <ul class="navList">
-        <li class="menuItem"><router-link to="/ResultsMedia">実績掲載</router-link></li>
-    </ul>
-    <ul class="navList">
-        <li class="menuItem"><router-link to="/News">ニュース</router-link></li>
-    </ul>
-    <ul class="navList">
-        <li class="menuItem"><router-link to="/Recruit">採用情報</router-link></li>
-    </ul>
+
+            <div class="header-wrapper">
+
+                <ul class="navList">
+                    <li class="menuItem"><router-link to="/Company">会社概要</router-link></li>
+                </ul>
+                <ul class="navList">
+                    <li class="menuItem"><router-link to="/Access">アクセス</router-link></li>
+                </ul>
+                <ul class="navList">
+                    <li class="menuItem"><a href="#">商品紹介</a>
+                        <ul class="dropList">
+                            <router-link to="/Info360" class="override-link-style">INFO360</router-link>
+                            <router-link to="/BiForArchiCad" class="override-link-style">BI for ArchiCAD</router-link>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navList">
+                    <li class="menuItem"><router-link to="/ResultsMedia">実績掲載</router-link></li>
+                </ul>
+                <ul class="navList">
+                    <li class="menuItem"><router-link to="/News">ニュース</router-link></li>
+                </ul>
+                <ul class="navList">
+                    <li class="menuItem"><router-link to="/Recruit">採用情報</router-link></li>
+                </ul>
+            </div>
+        </div>
+ 
+    <div class="home-video">
+
+        <div class="home-video-title">建設業界の慣習を覆す</div>
+        <video id="video" src="@/assets/みなとみらい_Twinmotion.mp4" playsinline muted loop style="width: 100%;">
+            <!-- autoplay 自动播放 -->
+        </video>
     </div>
-  </div>
-</div>
-<div class="home-video">
-   
-   <div class="home-video-title">建設業界の慣習を覆す</div>
-   <video id="video" src="@/assets/みなとみらい_Twinmotion.mp4" playsinline  muted loop style="width: 100%;" >
-    <!-- autoplay 自动播放 -->
-   </video>
 </div>
 </template>
 <style scoped>
 .navi {
-    top: 0;
-    max-width: 100%;
-    width: 100%;
+    min-width: 1390px;
     height: 20%;
     background-color: #454545;
-    transition: all 450ms cubic-bezier(.23,1,.32,1) 0s;
+    transition: all 450ms cubic-bezier(.23, 1, .32, 1) 0s;
 
 }
-@media (max-width: 700px) {
+
+/* @media (max-width: 700px) {
     .navi {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 80px;
-        
+
     }
+
     .ask-language,
     .header-wrapper {
         display: none;
     }
+
     .logo {
         display: block;
         margin-top: 0;
         margin-left: 0;
     }
+
     .logo a {
         font-size: 20px;
         line-height: 80px;
     }
-}
+} */
 
 .clearfix::before,
 .clearfix::after {
@@ -141,30 +144,35 @@ export default {
 .clearfix::after {
     clear: both;
 }
-.header-wrapper{
+
+.header-wrapper {
     height: 50px;
-    width: 100%; 
-    display: flex; 
+    width: 100%;
+    display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
-.menuItem{
-    float: left;
+
+.menuItem {
+    position: relative;
     width: 100px;
     line-height: 40px;
-    margin-right: 20px; 
-    text-align: center; 
-    position: relative;
+    margin-right: 20px;
+    text-align: center;
+    list-style: none;
 }
+
 .navList a {
     color: #fff;
     display: block;
-    text-decoration: none; 
+    text-decoration: none;
 }
-.navList a:hover{
+
+.navList a:hover {
     background: #666;
-    border-radius:3px;
+    border-radius: 3px;
 }
+
 .dropList {
     position: absolute;
     background: #454545;
@@ -178,50 +186,31 @@ export default {
     width: 10rem;
     height: 7rem;
 }
+
 .menuItem:hover .dropList {
     display: block;
 }
-.override-link-style{
+
+.override-link-style {
     margin: 15px 3px;
 }
-.overlay1 {
-    display: inline-flex;
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    transform: translate(-200%, 77%);
-}
 
-.overlay1 a {
-    display: block;
-    color: #dcdcdc;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-
-}
-
-.overlay2 {
-    display: inline-flex;
-    position: absolute;
+.overlay-list {
     float: right;
-    top: 0%;
-    right: 0%;
-    transform: translate(-15%, 70%);
+    margin: -70px 10px;
+    list-style: none; 
+}
+.overlay {
+    float: left;
+    margin-left: 20px; 
 }
 
-.overlay2 a {
-    display: block;
+.overlay a {
     color: #dcdcdc;
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
-
 }
-#language{
-    transform: translate(-15%, 21%);
-}
-
 #earth-icon {
     float: right;
     width: 20px;
@@ -229,27 +218,9 @@ export default {
     margin-bottom: 2px;
     background-image: url(@/assets/earth.svg);
     vertical-align: middle;
-    top: 0%;
-    right: 0%;
-    transform: translate(-550%, 10%);
-}
-.overlay3 {
-    display: inline-flex;
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    transform: translate(-510%, 77%);
 }
 
-.overlay3 a {
-    display: block;
-    color: #dcdcdc;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-}
- .dropdown-menu {
-    position: absolute;
+.dropdown-menu {
     top: 100%;
     left: -7px;
     min-width: 5rem;
@@ -262,7 +233,8 @@ export default {
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: .25rem;
-} 
+}
+
 
 .language-list {
     list-style-type: none;
@@ -342,9 +314,7 @@ nav .menu-item a {
     white-space: nowrap;
 }
 
-/* .dropdown {
-    position: relative;
-} */
+
 
 /* .navDropdown-menu {
     position: absolute;
@@ -389,35 +359,35 @@ nav .menu-item a {
 } */
 
 .home-video {
-   position: relative;
-   height: 600px;
-   background-color: transparent;
-   object-fit: cover;
+    position: relative;
+    height: 600px;
+    background-color: transparent;
+    object-fit: cover;
 }
 
 #video {
-   position: absolute;
-   height: 600px;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   object-fit: cover;
-}
-.home-video-title {
-   position: absolute;
-   display: flex;
-   width: 300px;
-   height: 300px;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   font-size: xx-large;
-   color: #ffffff;
-   text-shadow: 1px 1px 5px #262626;
-   white-space: nowrap;
-   justify-content: center;
-   align-items: center;
-   z-index: 2;
+    position: absolute;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }
 
+.home-video-title {
+    position: absolute;
+    display: flex;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: xx-large;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px #262626;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
 </style>

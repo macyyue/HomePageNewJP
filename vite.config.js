@@ -20,6 +20,10 @@ export default defineConfig({
             resolvers: [ElementPlusResolver({ importStyle: "sass" })],
         }),
     ],
+    // server: {
+    //     host: '0.0.0.0',
+    //     port: 1224,
+    // },
     resolve: {
         // 实际的路径转化 @ -> src
         alias: {
@@ -27,5 +31,13 @@ export default defineConfig({
                 import.meta.url))
         }
     },
-
+    server: {
+        proxy: {
+            '/api': { //获取路径中包含了/api的请求
+                target: 'http://localhost:8080', //后台所在路径的源
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api/, '')
+            }
+        }
+    }
 })
