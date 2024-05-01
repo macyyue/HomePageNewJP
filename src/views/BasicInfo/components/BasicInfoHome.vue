@@ -32,304 +32,311 @@ export default{
       }
      },
      methods:{
-      redirectToConfirmationPage(){
-        const userInfo = {
-        kanji_sei: this.kanji_sei,
-        kanji_na: this.kanji_na,
-  
-      };
-       // 编码 JSON 字符串
-       const userInfoStr = encodeURIComponent(JSON.stringify(userInfo));
-
-    // 构建包含编码后 JSON 字符串的 URL
-    const url = `/BasicInfo/ConfirmationPage?userInfo=${userInfoStr}`;
-      this.$router.push({
-        path: url,
-        name: 'ConfirmationPage',
-        query: { userInfo: JSON.stringify(userInfo) }
-      });
+      goSearch(){
+        this.$router.push({
+        path:'/NumberInfo',
+        query:{
+          kanji_sei:this.kanji_sei,
+          kanji_na:this.kanji_na,
+          kana_sei:this.kana_sei,
+          kana_na:this.kana_na,
+          sex:this.sex,
+          birth_year:this.birth_year,
+          birth_month:this.birth_month,
+          birth_day:this.birth_day,
+          keng:this.keng,
+          jushog1:this.jushog1,
+          jushog2:this.jushog2,
+          jushog3:this.jushog3,
+          telg_h:this.telg_h,
+          telg_m:this.telg_m,
+          telg_l:this.telg_l,
+          keitai_h:this.keitai_h,
+          keitai_m:this.keitai_m,
+          keitai_l:this.keitai_l,
+          email:this.email,
+          email2:this.email2,
+          school:this.school,
+          kokushi:this.kokushi,
+          gname:this.gname,
+          bname:this.bname,
+          kname:this.kname,
+          school_to_Y:this.school_to_Y,
+          school_to_M:this.school_to_M,
+        }
+      }) 
       }
      }
      
     }
-  
 </script>
+
 <template>
 <div id="page__all">
-<div id="main__contents" class="main__contents"> 
+ <div id="main__contents" class="main__contents"> 
 <form>
-<h2 class="simple__grp__title">
+ <h2 class="simple__grp__title">
     基本情報
-</h2>
-<!-- <h2>漢字氏名：{{ kanji_sei }}{{ kanji_na }}</h2>
-      <h2>カナ氏名：{{ kana_sei }}{{ kana_na }}</h2>
-      <h2>性別：{{ sex }}</h2>
-      <h2>生年月日：{{ birth_year }}年{{ birth_month }}月{{ birth_day }}日</h2>
-      <h2>住所：{{ keng }}{{ jushog1 }}{{ jushog2 }}{{ jushog3 }}</h2>
-      <h2>電話番号：{{ telg_h }}-{{ telg_m }}-{{ telg_l }}</h2>
-      <h2>携帯電話：{{ keitai_h }}-{{ keitai_m }}-{{ keitai_l }}</h2>
-      <h2>メールアドレス：{{ email }}</h2>
-      <h2>確認用：{{ email2 }}</h2>
-      <h2>学校区分：{{ school }}</h2>
-      <h2>設置区分：{{ kokushi }}</h2>
-      <h2>学校名：{{ gname }}</h2>
-      <h2>学部：{{ bname }}</h2>
-      <h2>学科：{{ kname }}</h2>
-      <h2>卒業年月：{{ school_to_Y }}年{{ school_to_M }}月</h2> -->
+  </h2>
   <div class="form__wrap">
-  <div class="form__item">
-  <div class="form__item__title__wrap">
-  <div class="form__item__title">
-    漢字氏名
-  </div>
-  </div>
+   <div class="form__item">
+    <div class="form__item__title__wrap">
+     <div class="form__item__title">
+         漢字氏名
+      </div>
+       </div>
 
   <div class="need__item">必須</div> 
-  <div class="form__item__group type__name fb_checkpoint">
-  <div class="name__left">
-  <div class="input__label">漢字姓</div>
-    <input size="10" v-model="kanji_sei" placeholder="漢字姓" type="text"/></div>
-    <div class="name__right"> 
-    <div class="input__label">漢字名</div>
-    <input size="10" v-model="kanji_na" placeholder="漢字名" type="text" ></div>
-
+   <div class="form__item__group type__name fb_checkpoint">
+    <div class="name__left">
+     <div class="input__label">漢字姓</div>
+      <input size="10" v-model="kanji_sei" placeholder="漢字姓" type="text"/></div>
+       <div class="name__right"> 
+        <div class="input__label">漢字名</div>
+         <input size="10" v-model="kanji_na" placeholder="漢字名" type="text" ></div>
   <div class="check__mark fb_ownAlertStrs"></div>
   </div>
-</div>
+   </div>
     
  <div class="form__item">
   <div class="form__item__title__wrap">
     <div class="form__item__title">カナ氏名</div>
       </div>
-  <div class="need__item">必須</div>  <div class="form__item__group type__name fb_checkpoint">
-  <div class="name__left"><div class="input__label">カナ姓</div>
-   <input size="10" v-model="kana_sei" placeholder="カナ姓" type="text"/></div>
-   <div class="name__right"><div class="input__label">カナ名</div>
-   <input size="10" v-model="kana_na" placeholder="カナ名" type="text"/></div>
+  <div class="need__item">必須</div>
+   <div class="form__item__group type__name fb_checkpoint">
+    <div class="name__left">
+     <div class="input__label">カナ姓</div>
+      <input size="10" v-model="kana_sei" placeholder="カナ姓" type="text"/>
+      </div>
+   <div class="name__right">
+    <div class="input__label">カナ名</div>
+     <input size="10" v-model="kana_na" placeholder="カナ名" type="text"/></div>
   <div class="check__mark fb_ownAlertStrs"></div>
   </div>
-</div>
+   </div>
 
-  <div class="form__item">
+<div class="form__item">
   <div class="form__item__title__wrap">
     <div class="form__item__title">性別</div>
-    </div>
+     </div>
   <div class="need__item">必須</div>  
-<div class="form__item__group type__sex fb_checkpoint">
-<label><input value="男性" v-model="sex" type="radio">男性</label>
-<label><input value="女性" v-model="sex" type="radio">女性</label>
-<label><input value="その他" v-model="sex" type="radio">その他</label>
-<label><input value="回答しない" v-model="sex" type="radio">回答しない</label>
+   <div class="form__item__group type__sex fb_checkpoint">
+    <label><input value="男性" v-model="sex" type="radio">男性</label>
+    <label><input value="女性" v-model="sex" type="radio">女性</label>
+    <label><input value="その他" v-model="sex" type="radio">その他</label>
+    <label><input value="回答しない" v-model="sex" type="radio">回答しない</label>
 <div class="check__mark fb_ownAlertStrs"></div>
-</div>
-</div>
+ </div>
+  </div>
 <div class="form__item">
   <div class="form__item__title__wrap">
     <div class="form__item__title">生年月日</div>
-    </div>
+     </div>
   <div class="need__item">必須</div>  
-<div class="form__item__group type__birth fb_checkpoint">
-    <span name="birth"><span class="select_wrap">
-<select name="" class="fb_dateElement_Y" v-model="birth_year">
-    <option value="">--</option>
-    <option value="1974">1974</option>
-    <option value="1975">1975</option>
-    <option value="1976">1976</option>
-    <option value="1977">1977</option>
-    <option value="1978">1978</option>
-    <option value="1979">1979</option>
-    <option value="1980">1980</option>
-    <option value="1981">1981</option>
-    <option value="1982">1982</option>
-    <option value="1983">1983</option>
-    <option value="1984">1984</option>
-    <option value="1985">1985</option>
-    <option value="1986">1986</option>
-    <option value="1987">1987</option>
-    <option value="1988">1988</option>
-    <option value="1989">1989</option>
-    <option value="1990">1990</option>
-    <option value="1991">1991</option>
-    <option value="1992">1992</option>
-    <option value="1993">1993</option>
-    <option value="1994">1994</option>
-    <option value="1995">1995</option>
-    <option value="1996">1996</option>
-    <option value="1997">1997</option>
-    <option value="1998">1998</option>
-    <option value="1999">1999</option>
-    <option value="2000">2000</option>
-    <option value="2001">2001</option>
-    <option value="2002">2002</option>
-    <option value="2003">2003</option>
-    <option value="2004">2004</option>
-    <option value="2005">2005</option>
-    <option value="2006">2006</option>
-</select>
-</span>年 <span class="select_wrap">
-<select name="" class="fb_dateElement_m" v-model="birth_month">
-<option value="">--</option>
-<option value="01">01</option>
-<option value="02">02</option>
-<option value="03">03</option>
-<option value="04">04</option>
-<option value="05">05</option>
-<option value="06">06</option>
-<option value="07">07</option>
-<option value="08">08</option>
-<option value="09">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-</select>
-</span>月 <span class="select_wrap">
-<select name="" class="fb_dateElement_d" v-model="birth_day">
-<option value="">--</option>
-<option value="01">01</option>
-<option value="02">02</option>
-<option value="03">03</option>
-<option value="04">04</option>
-<option value="05">05</option>
-<option value="06">06</option>
-<option value="07">07</option>
-<option value="08">08</option>
-<option value="09">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>
-<option value="24">24</option>
-<option value="25">25</option>
-<option value="26">26</option>
-<option value="27">27</option>
-<option value="28">28</option>
-<option value="29">29</option>
-<option value="30">30</option>
-<option value="31">31</option>
-</select>
-</span>日</span>
-    <div class="notice__example"></div>
-    <div class="check__mark fb_ownAlertStrs"></div>
-  </div>
+   <div class="form__item__group type__birth fb_checkpoint">
+    <span name="birth">
+      <span class="select_wrap">
+        <select name="" class="fb_dateElement_Y" v-model="birth_year">
+            <option value="">--</option>
+            <option value="1974">1974</option>
+            <option value="1975">1975</option>
+            <option value="1976">1976</option>
+            <option value="1977">1977</option>
+            <option value="1978">1978</option>
+            <option value="1979">1979</option>
+            <option value="1980">1980</option>
+            <option value="1981">1981</option>
+            <option value="1982">1982</option>
+            <option value="1983">1983</option>
+            <option value="1984">1984</option>
+            <option value="1985">1985</option>
+            <option value="1986">1986</option>
+            <option value="1987">1987</option>
+            <option value="1988">1988</option>
+            <option value="1989">1989</option>
+            <option value="1990">1990</option>
+            <option value="1991">1991</option>
+            <option value="1992">1992</option>
+            <option value="1993">1993</option>
+            <option value="1994">1994</option>
+            <option value="1995">1995</option>
+            <option value="1996">1996</option>
+            <option value="1997">1997</option>
+            <option value="1998">1998</option>
+            <option value="1999">1999</option>
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+        </select>
+      </span>年 
+      <span class="select_wrap">
+        <select name="" class="fb_dateElement_m" v-model="birth_month">
+        <option value="">--</option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        </select>
+      </span>月 
+      <span class="select_wrap">
+        <select name="" class="fb_dateElement_d" v-model="birth_day">
+        <option value="">--</option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        </select>
+      </span>日
+    </span>
+   <div class="notice__example"></div>
+  <div class="check__mark fb_ownAlertStrs"></div>
+</div>
 </div>           
 <div class="form__item">
   <div class="form__item__title__wrap">
     <div class="form__item__title">現住所</div>
       </div>
-      <div class="need__item">必須</div>
+  <div class="need__item">必須</div>
     <div class="form__item__multi">
-    <div class="form__item item__input">
+     <div class="form__item item__input">
       <div class="form__item__title__wrap">
-        <div class="form__item__title__sub">都道府県</div>
+       <div class="form__item__title__sub">都道府県</div>
         </div>
       <div class="form__item__group">
-        <div class="type__prefectures fb_checkpoint need__item__small">
-          <span class="select_wrap">
-<select v-model="keng" id=""  name="">
-<option value="">（選択してください）</option>
-<option value="北海道">北海道</option>
-<option value="青森県">青森県</option>
-<option value="岩手県">岩手県</option>
-<option value="宮城県">宮城県</option>
-<option value="秋田県">秋田県</option>
-<option value="山形県">山形県</option>
-<option value="福島県">福島県</option>
-<option value="茨城県">茨城県</option>
-<option value="栃木県">栃木県</option>
-<option value="群馬県">群馬県</option>
-<option value="埼玉県">埼玉県</option>
-<option value="千葉県">千葉県</option>
-<option value="東京都">東京都</option>
-<option value="神奈川県">神奈川県</option>
-<option value="新潟県">新潟県</option>
-<option value="富山県">富山県</option>
-<option value="石川県">石川県</option>
-<option value="福井県">福井県</option>
-<option value="山梨県">山梨県</option>
-<option value="長野県">長野県</option>
-<option value="岐阜県">岐阜県</option>
-<option value="静岡県">静岡県</option>
-<option value="愛知県">愛知県</option>
-<option value="三重県">三重県</option>
-<option value="滋賀県">滋賀県</option>
-<option value="京都府">京都府</option>
-<option value="大阪府">大阪府</option>
-<option value="兵庫県">兵庫県</option>
-<option value="奈良県">奈良県</option>
-<option value="和歌山県">和歌山県</option>
-<option value="鳥取県">鳥取県</option>
-<option value="島根県">島根県</option>
-<option value="岡山県">岡山県</option>
-<option value="広島県">広島県</option>
-<option value="山口県">山口県</option>
-<option value="徳島県">徳島県</option>
-<option value="香川県">香川県</option>
-<option value="愛媛県">愛媛県</option>
-<option value="高知県">高知県</option>
-<option value="福岡県">福岡県</option>
-<option value="佐賀県">佐賀県</option>
-<option value="長崎県">長崎県</option>
-<option value="熊本県">熊本県</option>
-<option value="大分県">大分県</option>
-<option value="宮崎県">宮崎県</option>
-<option value="鹿児島県">鹿児島県</option>
-<option value="沖縄県">沖縄県</option>
-<option value="日本国外">日本国外</option>
-</select>
-</span>
+       <div class="type__prefectures fb_checkpoint need__item__small">
+        <span class="select_wrap">
+          <select v-model="keng" id=""  name="">
+          <option value="">（選択してください）</option>
+          <option value="北海道">北海道</option>
+          <option value="青森県">青森県</option>
+          <option value="岩手県">岩手県</option>
+          <option value="宮城県">宮城県</option>
+          <option value="秋田県">秋田県</option>
+          <option value="山形県">山形県</option>
+          <option value="福島県">福島県</option>
+          <option value="茨城県">茨城県</option>
+          <option value="栃木県">栃木県</option>
+          <option value="群馬県">群馬県</option>
+          <option value="埼玉県">埼玉県</option>
+          <option value="千葉県">千葉県</option>
+          <option value="東京都">東京都</option>
+          <option value="神奈川県">神奈川県</option>
+          <option value="新潟県">新潟県</option>
+          <option value="富山県">富山県</option>
+          <option value="石川県">石川県</option>
+          <option value="福井県">福井県</option>
+          <option value="山梨県">山梨県</option>
+          <option value="長野県">長野県</option>
+          <option value="岐阜県">岐阜県</option>
+          <option value="静岡県">静岡県</option>
+          <option value="愛知県">愛知県</option>
+          <option value="三重県">三重県</option>
+          <option value="滋賀県">滋賀県</option>
+          <option value="京都府">京都府</option>
+          <option value="大阪府">大阪府</option>
+          <option value="兵庫県">兵庫県</option>
+          <option value="奈良県">奈良県</option>
+          <option value="和歌山県">和歌山県</option>
+          <option value="鳥取県">鳥取県</option>
+          <option value="島根県">島根県</option>
+          <option value="岡山県">岡山県</option>
+          <option value="広島県">広島県</option>
+          <option value="山口県">山口県</option>
+          <option value="徳島県">徳島県</option>
+          <option value="香川県">香川県</option>
+          <option value="愛媛県">愛媛県</option>
+          <option value="高知県">高知県</option>
+          <option value="福岡県">福岡県</option>
+          <option value="佐賀県">佐賀県</option>
+          <option value="長崎県">長崎県</option>
+          <option value="熊本県">熊本県</option>
+          <option value="大分県">大分県</option>
+          <option value="宮崎県">宮崎県</option>
+          <option value="鹿児島県">鹿児島県</option>
+          <option value="沖縄県">沖縄県</option>
+          <option value="日本国外">日本国外</option>
+         </select>
+        </span>
  <div class="check__mark fb_ownAlertStrs"></div>
- </div>
   </div>
-  </div>
+   </div>
+    </div>
 <div class="form__item item__input">
-      <div class="form__item__title__wrap">
-        <div class="form__item__title__sub">市区郡町村</div>
+  <div class="form__item__title__wrap">
+    <div class="form__item__title__sub">市区郡町村</div>
+      </div>
+  <div class="form__item__group">
+    <div class="fb_checkpoint need__item__small">
+      <input size="30" v-model="jushog1" placeholder="現住所(市区郡町村)" type="text"/>
+        <div class="check__mark fb_ownAlertStrs"></div>
+         </div>
+    <div class="notice__example"></div>
+     </div>
+      </div>
+
+<div class="form__item item__input">
+  <div class="form__item__title__wrap">
+    <div class="form__item__title__sub">町域・番地</div>
+      </div>
+  <div class="form__item__group">
+    <div class="fb_checkpoint need__item__small">
+      <input size="30" v-model="jushog2" placeholder="現住所(町域・番地)" type="text"/>
+        <div class="check__mark fb_ownAlertStrs"></div>
+         </div>
+      <div class="notice__example">記入例３－３－３</div>
+       </div>
         </div>
-      <div class="form__item__group">
-        <div class="fb_checkpoint need__item__small">
-          <input size="30" v-model="jushog1" placeholder="現住所(市区郡町村)" type="text"/>
-          <div class="check__mark fb_ownAlertStrs"></div>
+  <div class="form__item item__input">
+    <div class="form__item__title__wrap">
+      <div class="form__item__title__sub">建物名</div>
         </div>
-        <div class="notice__example"></div>
+    <div class="form__item__group">
+      <div class="fb_checkpoint">
+       <input size="30" v-model="jushog3" placeholder="現住所(建物名)" type="text"/>
+        <div class="check__mark fb_ownAlertStrs"></div>
+         </div>
+    <div class="notice__example"></div>
       </div>
     </div>
-
-    <div class="form__item item__input">
-      <div class="form__item__title__wrap">
-        <div class="form__item__title__sub">町域・番地</div>
-              </div>
-      <div class="form__item__group">
-        <div class="fb_checkpoint need__item__small">
-          <input size="30" v-model="jushog2" placeholder="現住所(町域・番地)" type="text"/>
-          <div class="check__mark fb_ownAlertStrs"></div>
-        </div>
-        <div class="notice__example">記入例３－３－３</div>
-      </div>
-    </div>
-
-    <div class="form__item item__input">
-      <div class="form__item__title__wrap">
-        <div class="form__item__title__sub">建物名</div>
-              </div>
-      <div class="form__item__group">
-        <div class="fb_checkpoint">
-          <input size="30" v-model="jushog3" placeholder="現住所(建物名)" type="text"/>
-          <div class="check__mark fb_ownAlertStrs"></div>
-        </div>
-        <div class="notice__example"></div>
-      </div>
-    </div>
-
   </div>
 </div>
           
@@ -337,46 +344,46 @@ export default{
 <div class="form__item">
   <div class="form__item__title__wrap">
     <div class="form__item__title">電話番号</div>
-      </div>
-      <div class="need__item">必須</div>
-    <div class="form__item__multi">
+     </div>
+  <div class="need__item">必須</div>
+   <div class="form__item__multi">
     <div class="form__item item__input">
-            <div class="notice__example notice__type__tel">▼ 自宅電話番号・携帯電話番号のいずれかを必ずご記入ください</div>
-            <div class="form__tel__wrap">
-        <div class="form__item__title__wrap">
-          <div class="form__item__title__sub">自宅電話番号</div>
-                  </div>
-        <div class="form__item__group">
-          <div class="jsJushoJapanG type__tel fb_checkpoint need__item__small">
-            <span name="telg">
-              <input v-model="telg_h" type="text" size="5" style="ime-mode:disabled;"/> - 
-              <input v-model="telg_m" type="text" size="4" style="ime-mode:disabled;"/> - 
-              <input v-model="telg_l" type="text" size="4" style="ime-mode:disabled;"/>
-            </span>
-            <div class="check__mark fb_ownAlertStrs"></div>
-          </div>
-          <div class="notice__example">（半角）&nbsp;例：03-1234-XXXX</div>
-                  </div>
+      <div class="notice__example notice__type__tel">▼ 自宅電話番号・携帯電話番号のいずれかを必ずご記入ください</div>
+        <div class="form__tel__wrap">
+  <div class="form__item__title__wrap">
+    <div class="form__item__title__sub">自宅電話番号</div>
       </div>
-      <div class="form__tel__wrap">
-        <div class="form__item__title__wrap">
-          <div class="form__item__title__sub">携帯電話番号</div>
-                  </div>
         <div class="form__item__group">
-          <div class="jsJushoJapanG type__tel fb_checkpoint need__item__small">
-            <span name="keitai">
-              <input v-model="keitai_h" type="text" size="5" style="ime-mode:disabled;"/> - 
-              <input v-model="keitai_m" type="text" size="4" style="ime-mode:disabled;"/> -
-              <input v-model="keitai_l" type="text" size="4" style="ime-mode:disabled;"/>
-            </span>
-            <div class="check__mark fb_ownAlertStrs"></div>
-          </div>
-          <div class="notice__example">（半角）&nbsp;例：090-1234-XXXX</div>
-                  </div>
-      </div>
+    <div class="jsJushoJapanG type__tel fb_checkpoint need__item__small">
+      <span name="telg">
+        <input v-model="telg_h" type="text" size="5" style="ime-mode:disabled;"/> - 
+        <input v-model="telg_m" type="text" size="4" style="ime-mode:disabled;"/> - 
+        <input v-model="telg_l" type="text" size="4" style="ime-mode:disabled;"/>
+    </span>
+   <div class="check__mark fb_ownAlertStrs"></div>
     </div>
-  </div>
-</div>     
+     <div class="notice__example">（半角）&nbsp;例：03-1234-XXXX</div>
+      </div>
+       </div>
+    <div class="form__tel__wrap">
+      <div class="form__item__title__wrap">
+        <div class="form__item__title__sub">携帯電話番号</div>
+         </div>
+    <div class="form__item__group">
+      <div class="jsJushoJapanG type__tel fb_checkpoint need__item__small">
+        <span name="keitai">
+          <input v-model="keitai_h" type="text" size="5" style="ime-mode:disabled;"/> - 
+          <input v-model="keitai_m" type="text" size="4" style="ime-mode:disabled;"/> -
+          <input v-model="keitai_l" type="text" size="4" style="ime-mode:disabled;"/>
+         </span>
+      <div class="check__mark fb_ownAlertStrs"></div>
+       </div>
+        <div class="notice__example">（半角）&nbsp;例：090-1234-XXXX</div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>     
 <div class="form__item">
   <div class="form__item__title__wrap">
     <div class="form__item__title">メールアドレス</div>
@@ -390,7 +397,7 @@ export default{
       <input v-model="email2" size="25" placeholder="確認用" type="text" style="ime-mode:disabled;"/>
       <div class="check__mark fb_ownAlertStrs"></div>
     </div>
-    <div class="notice__example">入力ミス防止のため同じメールアドレスを２度ご記入ください。</div>
+  <div class="notice__example">入力ミス防止のため同じメールアドレスを２度ご記入ください。</div>
     <div class="notice__example">携帯電話のメールアドレスはご遠慮ください。</div>
           </div>
             </div>
@@ -446,13 +453,12 @@ export default{
 
   <div class="form__item jsAxolSchool_bk_wrap">
     <div class="form__item__title__wrap">
-      <div class="form__item__title">学部</div>
-          </div>
+     <div class="form__item__title">学部</div>
+      </div>
     <div class="need__item">必須</div>
     <div class="form__item__group">
       <div class="jsAxolSchool_dbk_select_wrap fb_checkpoint">
-        <span class="select_wrap">
-</span>
+        <span class="select_wrap"></span>
         <div class="check__mark fb_ownAlertStrs"></div>
       </div>
       <div class="jsAxolSchool_dbk_text_wrap fb_checkpoint">
@@ -469,8 +475,7 @@ export default{
     <div class="need__item">必須</div>
     <div class="form__item__group">
       <div class="jsAxolSchool_dbk_select_wrap fb_checkpoint">
-        <span class="select_wrap">
-</span>
+        <span class="select_wrap"></span>
         <div class="check__mark fb_ownAlertStrs"></div>
       </div>
       <div class="jsAxolSchool_dbk_text_wrap fb_checkpoint">
@@ -487,50 +492,59 @@ export default{
   <div class="need__item">必須</div>
   <div class="form__item__group type__graduate fb_checkpoint">
     <span name="school_to"><span class="select_wrap">
-<select v-model="school_to_Y" name="" class="BY_dateElement_Y">
-<option value="">--</option>
-<option value="2019">2019</option>
-<option value="2020">2020</option>
-<option value="2021">2021</option>
-<option value="2022">2022</option>
-<option value="2023">2023</option>
-<option value="2024">2024</option>
-</select>
-</span>年 <span class="select_wrap">
-<select v-model="school_to_M" name="" class="BY_dateElement_m">
-<option value="">--</option>
-<option value="1">01</option>
-<option value="2">02</option>
-<option value="3">03</option>
-<option value="4">04</option>
-<option value="5">05</option>
-<option value="6">06</option>
-<option value="7">07</option>
-<option value="8">08</option>
-<option value="9">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-</select>
-</span>月</span>
+        <select v-model="school_to_Y" name="" class="BY_dateElement_Y">
+        <option value="">--</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+      </select>
+    </span>年
+   <span class="select_wrap">
+        <select v-model="school_to_M" name="" class="BY_dateElement_m">
+        <option value="">--</option>
+        <option value="1">01</option>
+        <option value="2">02</option>
+        <option value="3">03</option>
+        <option value="4">04</option>
+        <option value="5">05</option>
+        <option value="6">06</option>
+        <option value="7">07</option>
+        <option value="8">08</option>
+        <option value="9">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        </select>
+    </span>月
+   </span>
     <div class="check__mark fb_ownAlertStrs"></div>
   </div>
-</div>
+ </div>
 </div>
 
-<div class="form__bottom__textbox">
-  内容を確認し、よろしければ次の画面に進んでください。
-  </div>
-<div class="form_button" >
-    <button @click="redirectToConfirmationPage" class="btn__l btn__confirm next__arrow" type="submit">次の画面に進む</button>
+<div class="form__bottom__textbox">内容を確認し、よろしければ次の画面に進んでください。</div>
+ <div class="form_button" >
+  <button @click="goSearch" class="btn__l btn__confirm next__arrow" type="submit">次の画面に進む</button>
 </div>
   <!-- form_button end -->
 </form>
-</div>
-</div>
+ </div>
+  </div>
+  
 </template>
 
-<style>
+<style scoped>
+.main__contents{
+    position: relative;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
 .textbox{
 
     margin-top: 30px;

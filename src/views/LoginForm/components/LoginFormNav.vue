@@ -10,7 +10,7 @@
 <p class="heading_title">新規登録</p>
 </div>
     </template>
-    <style>
+    <style scoped>
    #header {
     width: 960px;
     margin-left: auto;

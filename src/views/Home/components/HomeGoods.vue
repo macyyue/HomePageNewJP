@@ -44,11 +44,11 @@ export default {
           return imagePath.default;
         } catch (error) {
           console.error("未找到图片：", error);
-          return ""; // 返回备用图片或处理错误
+          return ""; 
         }
       } else {
         console.error("无效的图片索引：", value);
-        return ""; // 返回备用图片或处理错误
+        return ""; 
       }
     },
     nextImage() {
@@ -73,10 +73,17 @@ export default {
     },
 
     getLink(index) {
-      if (index >= 0 && index <= 15) {
-        return "https://us-factory.jp/robot/";
+      const links = [
+        '/ModelingService',
+        '/News20220823',
+        '/ModelingService',
+        '/ModelingService',
+        '/ModelingService',
+      ]
+      if (index >= 0 && index <= links.length) {
+        return links[index];
       } else {
-        return "#";
+        return "";
       }
     },
   },

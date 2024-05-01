@@ -1,22 +1,4 @@
-﻿<!-- <script>
-  import axios from 'axios';
-
-    export default {
-    created() {
-        // 在组件创建时发出GET请求
-        axios.get('https://localhost:7005/API/UserLogin/Test')
-        .then(response => {
-            // 请求成功处理响应数据
-            console.log(response.data);
-        })
-        .catch(error => {
-            // 请求失败处理错误
-            console.error(error);
-        });
-    }
-    }
-</script> -->
-<template>
+﻿<template>
 <div id="menu__contents__wrap">
     <div id="contents__wrap">
     <div id="menu__area">
@@ -58,7 +40,7 @@
       <router-link to="/Login">
         <input id="submit" class="btn__l btn__submit" name="submit" value="ログイン" type="submit">
     </router-link>
-    <router-link to="/LoginNewMember">
+    <router-link to="/BasicInfo">
       <input id="submit" class="btn__l btn__submit" name="submit" value="初めての方はこちら" type="submit">
     </router-link>
     </div>
@@ -73,7 +55,7 @@
 </div>
 
 </template>
-<style>
+<style scoped>
 #page__all div #menu__contents__wrap {
     background: #fff;
 }

@@ -5,11 +5,17 @@
 <template>
     <div class="header sp headerHomeBg">
     <div class="headerBox">
-        <div class="titleLogo"><router-link to="/Recruit"><img src="@/assets/logo-recruit.svg"></router-link></div>
-        <div class="headerLogo"><a href="" target="_blank"><img src="@/assets/Uslogo-copyright.svg" style="height:35px;width:35px;"></a></div>
+        <div class="titleLogo">
+            <router-link to="/Recruit">
+                <img src="@/assets/logo-recruit.svg">
+            </router-link>
+        </div>
+        <div class="headerLogo">
+            <router-link to="/">
+            <img src="@/assets/Uslogo-copyright.svg" style="height:35px;width:35px;">
+        </router-link>
+        </div>
      </div>
-
-    
     <div class="menuPanelBody">
         <div class="menuArea">
             <div class="menuBox">

@@ -78,7 +78,7 @@
 </div>
 
 </template>
-<style>
+<style scoped>
 #page__all div #menu__contents__wrap {
     background: #fff;
 }

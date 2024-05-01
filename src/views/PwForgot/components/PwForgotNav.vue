@@ -11,7 +11,7 @@
 </div>
 </template>
 
-    <style>
+    <style scoped>
    #header {
     width: 960px;
     margin-left: auto;

@@ -13,7 +13,7 @@
     </div>
 </template>
 
-<style>
+<style scoped>
 #footer {
     width: 100%;
     padding-top: 0;

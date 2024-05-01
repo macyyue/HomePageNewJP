@@ -38,7 +38,7 @@
 </div>
 
 </template>
-<style>
+<style scoped>
 #page__all div #menu__contents__wrap {
     background: #fff;
 }
@@ -142,6 +142,13 @@ div#page__all #contents__area__wrap {
     color: #fff;
     border-bottom: 3px solid #C8CCD0;
     border-radius: 5px;
+}
+.form_button.input{
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 2px 6px -4px rgba(0, 0, 0, 0.2) inset, 0 2px 4px -4px rgba(0, 0, 0, 0.2) inset;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
 .btn__l {
     min-width: 100px;
